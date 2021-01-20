@@ -34,6 +34,8 @@ elif [[ -e /etc/centos-release ]]; then
 elif [[ -e /etc/fedora-release ]]; then
 	os="fedora"
 	os_version=$(grep -oE '[0-9]+' /etc/fedora-release | head -1)
+elif grep -qs "opensuse" /etc/os-release; then
+	os="opensuse"
 else
 	echo "This installer seems to be running on an unsupported distribution.
 Supported distributions are Ubuntu, Debian, CentOS, and Fedora."
